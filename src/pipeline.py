@@ -1,6 +1,7 @@
 import pandas as pd
 
 from src.quality.config_loader import load_quality_rules
+from src.quality.metrics import build_quality_metrics
 from src.quality.profiler import profile_dataset
 from src.quality.quality_engine import run_quality_checks
 from src.quality.report import build_quality_report
@@ -24,7 +25,13 @@ def run_data_quality_pipeline(
         email_columns=rules["email_columns"],
     )
 
-    return build_quality_report(
+    report = build_quality_report(
         profile,
         quality_result,
     )
+
+    metrics = build_quality_metrics(report)
+
+    report["metrics"] = metrics
+
+    return report
