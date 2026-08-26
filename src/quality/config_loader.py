@@ -1,23 +1,21 @@
 from pathlib import Path
+
 import yaml
 
 
-def load_quality_rules(config_path: str = "config/quality_rules.yaml") -> dict:
-    """Load data quality rules from YAML configuration."""
+CONFIG_FILE = Path("config/quality_rules.yaml")
 
-    path = Path(config_path)
 
-    if not path.exists():
-        raise FileNotFoundError(
-            f"Quality rules configuration not found: {path}"
-        )
+def load_quality_rules() -> dict:
+    with CONFIG_FILE.open("r", encoding="utf-8") as file:
+        config = yaml.safe_load(file) or {}
 
-    with path.open("r", encoding="utf-8") as file:
-        config = yaml.safe_load(file)
-
-    if not config or "quality_rules" not in config:
-        raise ValueError(
-            "Configuration must contain a 'quality_rules' section."
-        )
-
-    return config["quality_rules"]
+    return {
+        "required_columns": config.get("required_columns", []),
+        "not_null_columns": config.get("not_null_columns", []),
+        "unique_columns": config.get("unique_columns", []),
+        "email_columns": config.get("email_columns", []),
+        "quality_score_threshold": float(
+            config.get("quality_score_threshold", 95.0)
+        ),
+    }

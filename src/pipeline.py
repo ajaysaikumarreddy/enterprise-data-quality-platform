@@ -1,5 +1,6 @@
 import pandas as pd
 
+from src.quality.alerts import evaluate_quality_alert
 from src.quality.config_loader import load_quality_rules
 from src.quality.history import load_quality_history, save_quality_result
 from src.quality.metrics import build_quality_metrics
@@ -41,5 +42,10 @@ def run_data_quality_pipeline(
     history = load_quality_history()
 
     report["trend"] = build_quality_trend(history)
+
+    report["alert"] = evaluate_quality_alert(
+    metrics["quality_score"],
+    threshold=rules["quality_score_threshold"],
+)
 
     return report

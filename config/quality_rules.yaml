@@ -1,21 +1,19 @@
-quality_rules:
-  required_columns:
-    - customer_id
-    - customer_name
-    - email
-    - country
+required_columns:
+  - customer_id
+  - customer_name
+  - email
+  - country
 
-  not_null_columns:
-    - customer_id
-    - customer_name
-    - email
+not_null_columns:
+  - customer_id
+  - customer_name
+  - email
 
-  unique_columns:
-    - customer_id
-    - email
+unique_columns:
+  - customer_id
+  - email
 
-  email_columns:
-    - email
+email_columns:
+  - email
 
-  non_negative_columns:
-    - value
+quality_score_threshold: 95.0
