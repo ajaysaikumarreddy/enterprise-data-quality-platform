@@ -1,10 +1,12 @@
 import pandas as pd
 
 from src.quality.config_loader import load_quality_rules
+from src.quality.history import load_quality_history, save_quality_result
 from src.quality.metrics import build_quality_metrics
 from src.quality.profiler import profile_dataset
 from src.quality.quality_engine import run_quality_checks
 from src.quality.report import build_quality_report
+from src.quality.trend import build_quality_trend
 
 
 def run_data_quality_pipeline(
@@ -33,5 +35,11 @@ def run_data_quality_pipeline(
     metrics = build_quality_metrics(report)
 
     report["metrics"] = metrics
+
+    save_quality_result(metrics)
+
+    history = load_quality_history()
+
+    report["trend"] = build_quality_trend(history)
 
     return report
