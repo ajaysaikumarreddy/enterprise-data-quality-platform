@@ -1,8 +1,18 @@
 quality_rules:
   required_columns:
     - customer_id
-    - event_timestamp
-    - value
+    - customer_name
+    - email
+    - country
 
-  thresholds:
-    minimum_pass_rate: 95
+  not_null_columns:
+    - customer_id
+    - customer_name
+    - email
+
+  unique_columns:
+    - customer_id
+    - email
+
+  email_columns:
+    - email
