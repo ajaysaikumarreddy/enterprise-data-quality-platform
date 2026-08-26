@@ -16,3 +16,6 @@ quality_rules:
 
   email_columns:
     - email
+
+  non_negative_columns:
+    - value
