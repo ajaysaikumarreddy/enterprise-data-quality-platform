@@ -1,0 +1,8 @@
+quality_rules:
+  required_columns:
+    - customer_id
+    - event_timestamp
+    - value
+
+  thresholds:
+    minimum_pass_rate: 95
