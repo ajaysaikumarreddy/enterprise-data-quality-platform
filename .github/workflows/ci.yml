@@ -1,4 +1,4 @@
-name: Data Quality Platform CI
+name: Data Quality Platform CI/CD
 
 on:
   push:
@@ -10,6 +10,19 @@ on:
     branches:
       - main
       - develop
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  PROJECT_ID: cloud-run-tf-lab-2026
+  REGION: us-central1
+  REPOSITORY: cloud-run-app
+  IMAGE_NAME: enterprise-data-quality-platform
+  SERVICE_NAME: cloud-run-demo
+  SERVICE_ACCOUNT: github-actions-deployer@cloud-run-tf-lab-2026.iam.gserviceaccount.com
+  WIF_PROVIDER: projects/474044978112/locations/global/workloadIdentityPools/github-actions/providers/github
 
 jobs:
 
@@ -49,4 +62,60 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t enterprise-data-quality-platform .
+          docker build \
+            -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE_NAME:${{ github.sha }} \
+            -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE_NAME:latest \
+            .
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    needs: docker
+
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ env.WIF_PROVIDER }}
+          service_account: ${{ env.SERVICE_ACCOUNT }}
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker
+        run: |
+          gcloud auth configure-docker $REGION-docker.pkg.dev --quiet
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE_NAME:${{ github.sha }} \
+            -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE_NAME:latest \
+            .
+
+      - name: Push Docker image
+        run: |
+          docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE_NAME:${{ github.sha }}
+          docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE_NAME:latest
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy $SERVICE_NAME \
+            --image=$REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE_NAME:${{ github.sha }} \
+            --region=$REGION \
+            --project=$PROJECT_ID \
+            --platform=managed
+
+      - name: Show deployed service
+        run: |
+          gcloud run services describe $SERVICE_NAME \
+            --region=$REGION \
+            --project=$PROJECT_ID \
+            --format="value(status.url)"
