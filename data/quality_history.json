@@ -1,0 +1,362 @@
+[
+  {
+    "run_timestamp": "2026-08-26T07:20:53.009800+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:21:03.786813+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 5,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:22:37.001845+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:25:21.993617+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:26:23.677974+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:26:36.489962+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 5,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:26:43.043868+00:00",
+    "status": "FAIL",
+    "quality_score": 100.0,
+    "total_records": 5,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": [
+      "customer_name",
+      "email",
+      "country"
+    ]
+  },
+  {
+    "run_timestamp": "2026-08-26T07:28:49.196891+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:29:35.714614+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:29:44.800400+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 5,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:29:52.674945+00:00",
+    "status": "FAIL",
+    "quality_score": 100.0,
+    "total_records": 5,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": [
+      "customer_name",
+      "email",
+      "country"
+    ]
+  },
+  {
+    "run_timestamp": "2026-08-26T07:33:36.826783+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:34:41.210163+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:34:51.066156+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:35:18.165546+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 5,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:53:47.794593+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:53:54.682647+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 5,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:57:20.249523+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T07:58:29.181244+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:01:00.379283+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:01:06.764347+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 5,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:02:35.727621+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:02:44.183988+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:04:16.361656+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 5,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:05:20.490011+00:00",
+    "status": "FAIL",
+    "quality_score": 60.0,
+    "total_records": 5,
+    "failed_records": 1,
+    "duplicate_records": 1,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:07:56.415405+00:00",
+    "status": "FAIL",
+    "quality_score": 60.0,
+    "total_records": 5,
+    "failed_records": 1,
+    "duplicate_records": 1,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:10:45.211113+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:12:40.758526+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:13:46.400607+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:15:58.269854+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-26T08:19:45.136712+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-27T06:09:07.565860+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  }
+]

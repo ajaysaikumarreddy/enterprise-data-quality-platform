@@ -1,0 +1,11 @@
+[
+  {
+    "issue_id": "c0984084-7e87-4bb8-8c1f-dd394fe419a8",
+    "created_at": "2026-08-26T08:07:56.429780+00:00",
+    "check_name": "duplicate_records",
+    "severity": "HIGH",
+    "message": "1 duplicate records detected.",
+    "status": "RESOLVED",
+    "updated_at": "2026-08-26T08:15:42.797077+00:00"
+  }
+]

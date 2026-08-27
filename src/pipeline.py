@@ -3,6 +3,7 @@ import pandas as pd
 from src.quality.alerts import evaluate_quality_alert
 from src.quality.config_loader import load_quality_rules
 from src.quality.history import load_quality_history, save_quality_result
+from src.quality.issue_registry import create_issue, save_issue
 from src.quality.metrics import build_quality_metrics
 from src.quality.profiler import profile_dataset
 from src.quality.quality_engine import run_quality_checks
@@ -14,9 +15,13 @@ def run_data_quality_pipeline(
     data: pd.DataFrame,
     required_columns: list[str] | None = None,
 ) -> dict:
+
     rules = load_quality_rules()
 
-    required_columns = required_columns or rules["required_columns"]
+    required_columns = (
+        required_columns
+        or rules["required_columns"]
+    )
 
     profile = profile_dataset(data)
 
@@ -44,8 +49,56 @@ def run_data_quality_pipeline(
     report["trend"] = build_quality_trend(history)
 
     report["alert"] = evaluate_quality_alert(
-    metrics["quality_score"],
-    threshold=rules["quality_score_threshold"],
-)
+        metrics["quality_score"],
+        threshold=rules["quality_score_threshold"],
+    )
+
+    # ---------------------------------------------------------
+    # Data Quality Issue Registry
+    # ---------------------------------------------------------
+
+    if metrics.get("duplicate_records", 0) > 0:
+        issue = create_issue(
+            check_name="duplicate_records",
+            message=(
+                f"{metrics['duplicate_records']} "
+                "duplicate records detected."
+            ),
+            severity="HIGH",
+        )
+        save_issue(issue)
+
+    if metrics.get("null_violations", 0) > 0:
+        issue = create_issue(
+            check_name="null_violations",
+            message=(
+                f"{metrics['null_violations']} "
+                "null violations detected."
+            ),
+            severity="HIGH",
+        )
+        save_issue(issue)
+
+    if metrics.get("invalid_email_records", 0) > 0:
+        issue = create_issue(
+            check_name="invalid_email_records",
+            message=(
+                f"{metrics['invalid_email_records']} "
+                "invalid email records detected."
+            ),
+            severity="MEDIUM",
+        )
+        save_issue(issue)
+
+    if metrics.get("missing_columns"):
+        issue = create_issue(
+            check_name="missing_columns",
+            message=(
+                f"Missing columns detected: "
+                f"{metrics['missing_columns']}"
+            ),
+            severity="CRITICAL",
+        )
+        save_issue(issue)
 
     return report
