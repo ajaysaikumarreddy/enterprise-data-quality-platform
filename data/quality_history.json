@@ -358,5 +358,27 @@
     "null_violations": 0,
     "invalid_email_records": 0,
     "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-27T06:22:16.598804+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
+  },
+  {
+    "run_timestamp": "2026-08-27T06:22:27.342177+00:00",
+    "status": "PASS",
+    "quality_score": 100.0,
+    "total_records": 3,
+    "failed_records": 0,
+    "duplicate_records": 0,
+    "null_violations": 0,
+    "invalid_email_records": 0,
+    "missing_columns": []
   }
 ]

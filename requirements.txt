@@ -1,3 +1,4 @@
 pandas
+PyYAML
 pytest
-pyyaml
+streamlit
